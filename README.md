@@ -4,12 +4,19 @@ Based on James Calam's 5-hr LangChain course, this project is a comprehensive ha
 
 ## Highlights
 
-- **LangChain Ecosystem**: Extensive use of the LangChain library and Langsmith for building, orchestrating, and debugging complex LLM pipelines.
+- **LangChain Ecosystem**: Extensive use of the LangChain library and LangSmith for building, orchestrating, and debugging complex LLM pipelines.
 - **Prompt Engineering**: Practical experience designing, refining, and evaluating prompts to achieve nuanced model behaviors and reliable outputs.
 - **LLM Workflows**: Built asynchronous, streaming LLM pipelines with strong conversational memory and robust context handling for real-world applications.
 - **Full Stack ReAct Agent Application**: Developed an end-to-end agent system using React, Tailwind CSS, NextJS (frontend), and FastAPI with Pydantic (backend). Includes reasoning checkpoints, extended web search, and modular agent tools.
 - **API Integrations**: Integrated multiple APIs such as OpenAI, Ollama (for running open-source LLMs locally), and SerpAPI (for advanced web search).
 - **Open Source LLMs**: Experimented with and deployed models like Llama 3.2:1b, Llama 3.2:3b, and Llama 3.3:70b via Ollama for flexible, high-quality inference.
+
+## Project Structure
+
+- `/api`: FastAPI backend with streaming endpoints
+- `/app`: Next.js + React frontend with Tailwind CSS
+- `/notebooks`: Jupyter notebooks for experimentation and testing
+- `streaming-test.ipynb`: Quickstart notebook for streaming LLM output
 
 ## Running the Project
 

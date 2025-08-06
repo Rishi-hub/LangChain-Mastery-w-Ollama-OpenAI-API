@@ -1,32 +1,33 @@
-# LangChain Course
+# LangChain Mastery with Ollama & OpenAI API
 
-Welcome to the LangChain course by Aurelio AI!
+Based on James Calam's 5-hr LangChain course, this project is a comprehensive hands-on exploration of advanced Generative AI techniques and full-stack LLM workflows. It reflects my experience leveraging state-of-the-art frameworks and tools to build robust, scalable, and feature-rich AI applications.
 
-## Getting Started
+## Highlights
 
-### Python Environment (IMPORTANT)
+- **LangChain Ecosystem**: Extensive use of the LangChain library and Langsmith for building, orchestrating, and debugging complex LLM pipelines.
+- **Prompt Engineering**: Practical experience designing, refining, and evaluating prompts to achieve nuanced model behaviors and reliable outputs.
+- **LLM Workflows**: Built asynchronous, streaming LLM pipelines with strong conversational memory and robust context handling for real-world applications.
+- **Full Stack ReAct Agent Application**: Developed an end-to-end agent system using React, Tailwind CSS, NextJS (frontend), and FastAPI with Pydantic (backend). Includes reasoning checkpoints, extended web search, and modular agent tools.
+- **API Integrations**: Integrated multiple APIs such as OpenAI, Ollama (for running open-source LLMs locally), and SerpAPI (for advanced web search).
+- **Open Source LLMs**: Experimented with and deployed models like Llama 3.2:1b, Llama 3.2:3b, and Llama 3.3:70b via Ollama for flexible, high-quality inference.
 
-This course repo contains everything you need to install an exact duplicate Python environment as used during the course creation. 
+## Running the Project
 
-#### Installing Python Venvs
+### Python Environment
 
-The Python packages are managed using the [uv](https://github.com/astral-sh/uv) package manager, and so we must install `uv` as a prerequisite for the course. We do so by following the [installation guide](https://docs.astral.sh/uv/#getting-started). For Mac users, as of 22 Oct 2024 enter the following in your terminal:
-
-```
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-Once `uv` is installed and available in your terminal you can navigate to the course root directory and execute:
-
-```
-uv python install 3.12.7
-uv venv --python 3.12.7
-uv sync
-```
+The Python packages are managed using the [uv](https://github.com/astral-sh/uv) package manager, and so we must install `uv` as a prerequisite for the course. We do so by following the [installation guide](https://docs.astral.sh/uv/#getting-started). For Mac users, as of 22 Oct 2024 you can just enter the following in your terminal:
+1. Install the [uv](https://github.com/astral-sh/uv) package manager:
+    ```sh
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    ```
+2. Once `uv` is installed and available in your terminal, navigate to the root directory and execute the following:
+    ```sh
+    uv python install 3.12.7
+    uv venv --python 3.12.7
+    uv sync
+    ```
 
 > ❗️ You may need to restart the terminal if the `uv` command is not recognized by your terminal.
-
-With that we have our chapter venv installed. When working through the code for a specific chapter, always create a new venv to avoid dependency hell.
 
 #### Using Venv in VS Code / Cursor
 
@@ -49,12 +50,34 @@ deactivate
 rm -rf .venv -r
 ```
 
-### Ollama
+### Ollama Setup
 
-The course can be run using OpenAI or Ollama. If using Ollama, you must go to [ollama.com](https://ollama.com/) and install Ollama for your respective OS (MacOS is recommended).
+- [Download and install Ollama](https://ollama.com/) for local LLM inference.
+- Pull the desired Llama models, e.g.:
+    ```sh
+    ollama pull llama3.2:3b
+    ```
+- Ensure Ollama is running by executing `ollama serve` in your terminal or running the Ollama application.
+- Take note of the server port, by default Ollama runs on `http://localhost:11434`
 
-Whenever an LLM is used via Ollama you must:
+### Backend API
 
-1. Ensure Ollama is running by executing `ollama serve` in your terminal or running the Ollama application. Make sure to keep note of the port the server is running on, by default Ollama runs on `http://localhost:11434`
+- Navigate to `/api` and start the FastAPI server:
+    ```sh
+    uv run uvicorn main:app --reload
+    ```
+- API docs are available at `http://localhost:8000/docs`
+- Streaming test notebook: `streaming-test.ipynb`
 
-2. Download the LLM being used in your current example using `ollama pull`. For example, to download Llama 3.2 3B, we execute `ollama pull llama 3.2:3b` in our terminal.
+### Frontend App
+
+- Navigate to `/app` and start the development server:
+    ```sh
+    npm install
+    npm run dev
+    ```
+- The app runs at `http://localhost:3000`
+
+---
+
+Thanks for checking out my work. This repository is my attempt to gain hands-on experience with LangChain and modern AI tooling to build full-stack agent applications from design to deployment using proprietary and open-source LLMs. Would appreciate any feedback and comments.
